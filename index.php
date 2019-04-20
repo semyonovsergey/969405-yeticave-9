@@ -108,17 +108,18 @@ $ad = [
         </div>
         <ul class="lots__list">
             <!--заполните этот список из массива с товарами-->
+            <?php foreach ($ad as $value): ?>
             <li class="lots__item lot">
                 <div class="lot__image">
-                    <img src="" width="350" height="260" alt="">
+                    <img src=<?=$value[3];?> width="350" height="260" alt="">
                 </div>
                 <div class="lot__info">
-                    <span class="lot__category">Название категории</span>
-                    <h3 class="lot__title"><a class="text-link" href="pages/lot.html">Название товара</a></h3>
+                    <span class="lot__category"><?=$value[1];?></span>
+                    <h3 class="lot__title"><a class="text-link" href="pages/lot.html"><?=$value[0];?></a></h3>
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost">цена<b class="rub">р</b></span>
+                            <span class="lot__cost"><?=$value[2];?><b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
@@ -126,6 +127,7 @@ $ad = [
                     </div>
                 </div>
             </li>
+            <?php endforeach; ?>
         </ul>
     </section>
 </main>
@@ -140,7 +142,7 @@ $ad = [
                 <?php foreach ($cat as $value): ?>
                     <a href="pages/all-lots.html"><?=$value;?></a>
                 <?php endforeach; ?>
-                
+
             </li>
         </ul>
     </nav>
