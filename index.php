@@ -1,7 +1,7 @@
 <?php
 $is_auth = rand(0, 1);
-
 $user_name = 'Semyonov Sergey'; // укажите здесь ваше имя
+$cat = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -56,7 +56,11 @@ $user_name = 'Semyonov Sergey'; // укажите здесь ваше имя
         <ul class="promo__list">
             <!--заполните этот список из массива категорий-->
             <li class="promo__item promo__item--boards">
-                <a class="promo__link" href="pages/all-lots.html">Имя категории</a>
+
+                <?php foreach ($cat as $value): ?>
+                    <a class="promo__link" href="pages/all-lots.html"><?=$value;?></a>
+                <?php endforeach; ?>
+
             </li>
         </ul>
     </section>
