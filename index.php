@@ -40,6 +40,12 @@ $ad = [
         "pic" => "img/lot-6.jpg"
     ],
 ];
+
+function price_formating ($val) {
+    $val_format = (string) number_format(ceil($val), 0, ",", " ") . " " . "&#8399;"; 
+    return $val_format;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -120,7 +126,7 @@ $ad = [
                         <div class="lot__state">
                             <div class="lot__rate">
                                 <span class="lot__amount">Стартовая цена</span>
-                                <span class="lot__cost"><?=$value["price_begin"];?><b class="rub">р</b></span>
+                                <span class="lot__cost"><?=price_formating($value["price_begin"]);?><b class="rub">р</b></span>
                             </div>
                             <div class="lot__timer timer">
                                 12:23
