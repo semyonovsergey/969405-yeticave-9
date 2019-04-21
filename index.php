@@ -42,7 +42,7 @@ $ad = [
 ];
 
 function price_formating ($val) {
-    $val_format = (string) number_format(ceil($val), 0, ",", " ") . " " . "&#8399;"; 
+    $val_format = (string) number_format(ceil($val), 0, ",", " ") . " " . "&#8381;"; 
     return $val_format;
 }
 
