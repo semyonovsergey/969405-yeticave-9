@@ -40,6 +40,7 @@ $ad = [
         "pic" => "img/lot-6.jpg"
     ],
 ];
+$page_name;
 
 function price_formating ($val) {
     $val_format = (string) number_format(ceil($val), 0, ",", " ") . " " . "&#8381;"; 
@@ -51,7 +52,7 @@ function price_formating ($val) {
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Главная</title>
+    <title><?=$page_name;?></title>
     <link href="../css/normalize.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 </head>
