@@ -1,4 +1,7 @@
 <?php
+
+require_once("helpers.php");
+
 $is_auth = rand(0, 1);
 $user_name = 'Semyonov Sergey'; // укажите здесь ваше имя
 $cat = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
@@ -45,5 +48,16 @@ function price_formating ($val) {
     $val_format = (string) number_format(ceil($val), 0, ",", " ") . " " . "&#8381;"; 
     return $val_format;
 }
+
+$page_content = include_template("index.php", ["cat" => $cat, "ad" => $ad]);
+
+$layout_content = include_template("layout.php", [
+    "page_name" => "Главная",
+    "is_auth" => $is_auth,
+    "page_content" => $page_content,
+    "cat" => $cat
+    ]);
+
+print($layout_content);
 
 ?>
