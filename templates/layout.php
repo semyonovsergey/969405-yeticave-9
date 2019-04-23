@@ -1,58 +1,8 @@
-<?php
-$is_auth = rand(0, 1);
-$user_name = 'Semyonov Sergey'; // укажите здесь ваше имя
-$cat = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
-$ad = [
-    [
-        "title" => "2014 Rossignol District Snowboard",
-        "category" => "Доски и лыжи",
-        "price_begin" => 10999,
-        "pic" => "img/lot-1.jpg"
-    ],
-    [
-        "title" => "DC Ply Mens 2016/2017 Snowboard",
-        "category" => "Доски и лыжи",
-        "price_begin" => 159999,
-        "pic" => "img/lot-2.jpg"
-    ],
-    [
-        "title" => "Крепления Union Contact Pro 2015 года размер L/XL",
-        "category" => "Крепления",
-        "price_begin" => 8000,
-        "pic" => "img/lot-3.jpg"
-    ],
-    [
-        "title" => "Ботинки для сноуборда DC Mutiny Charocal",
-        "category" => "Ботинки",
-        "price_begin" => 10999,
-        "pic" => "img/lot-4.jpg"
-    ],
-    [
-        "title" => "Куртка для сноуборда DC Mutiny Charocal",
-        "category" => "Одежда",
-        "price_begin" => 7500,
-        "pic" => "img/lot-5.jpg"
-    ],
-    [
-        "title" => "Маска Oakley Canopy",
-        "category" => "Разное",
-        "price_begin" => 5400,
-        "pic" => "img/lot-6.jpg"
-    ],
-];
-$page_name;
-
-function price_formating ($val) {
-    $val_format = (string) number_format(ceil($val), 0, ",", " ") . " " . "&#8381;"; 
-    return $val_format;
-}
-
-?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title><?=$page_name;?></title>
+    <title><?=$page_name;?>Главная</title>
     <link href="../css/normalize.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 </head>
@@ -74,72 +24,27 @@ function price_formating ($val) {
         <nav class="user-menu">
 
         <!-- здесь должен быть PHP код для показа меню и данных пользователя -->
-		<?php if ($is_auth == 1): ?>
-			<div class="user-menu__logged"
-				<p>Semyonov Sergey</p>
-				<a class="user-menu__bets" href="pages/my-bets.html">Мои ставки</a>
-				<a class="user-menu__logout" href="#">Выход</a>
-			</div>
+        <?php if ($is_auth == 1): ?>
+            <div class="user-menu__logged"
+                <p>Semyonov Sergey</p>
+                <a class="user-menu__bets" href="pages/my-bets.html">Мои ставки</a>
+                <a class="user-menu__logout" href="#">Выход</a>
+            </div>
         <?php else: ?>
-			<ul class="user-menu__list">
-				<li class="user-menu__item">
-					<a href="#">Регистрация</a>
-				</li>
-				<li class="user-menu__item">
-					<a href="#">Вход</a>
-				</li>
-			</ul>
-		<?php endif; ?>
+            <ul class="user-menu__list">
+                <li class="user-menu__item">
+                    <a href="#">Регистрация</a>
+                </li>
+                <li class="user-menu__item">
+                    <a href="#">Вход</a>
+                </li>
+            </ul>
+        <?php endif; ?>
         </nav>
     </div>
 </header>
 
-<main class="container">
-    <section class="promo">
-        <h2 class="promo__title">Нужен стафф для катки?</h2>
-        <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
-        <ul class="promo__list">
-            <!--заполните этот список из массива категорий-->
-
-            <?php foreach ($cat as $value): ?>
-                <li class="promo__item promo__item--boards">                
-                    <a class="promo__link" href="pages/all-lots.html"><?=$value;?></a>
-                </li>
-            <?php endforeach; ?>
-
-        </ul>
-    </section>
-    <section class="lots">
-        <div class="lots__header">
-            <h2>Открытые лоты</h2>
-        </div>
-        <ul class="lots__list">
-            <!--заполните этот список из массива с товарами-->
-
-            <?php foreach ($ad as $key => $value): ?>
-                <li class="lots__item lot">
-                    <div class="lot__image">
-                        <img src=<?=$value["pic"];?> width="350" height="260" alt="">
-                    </div>
-                    <div class="lot__info">
-                        <span class="lot__category"><?=$value["category"];?></span>
-                        <h3 class="lot__title"><a class="text-link" href="pages/lot.html"><?=$value["title"];?></a></h3>
-                        <div class="lot__state">
-                            <div class="lot__rate">
-                                <span class="lot__amount">Стартовая цена</span>
-                                <span class="lot__cost"><?=price_formating($value["price_begin"]);?></span>
-                            </div>
-                            <div class="lot__timer timer">
-                                12:23
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            <?php endforeach; ?>
-            
-        </ul>
-    </section>
-</main>
+<main class="container"><?=$page_content;?></main>
 </div>
 
 <footer class="main-footer">
