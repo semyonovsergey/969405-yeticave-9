@@ -44,11 +44,6 @@ $ad = [
     ],
 ];
 
-function price_formating ($val) {
-    $val_format = (string) number_format(ceil($val), 0, ",", " ") . " " . "&#8381;"; 
-    return $val_format;
-}
-
 $page_content = include_template("index.php", ["cat" => $cat, "ad" => $ad]);
 
 $layout_content = include_template("layout.php", [
