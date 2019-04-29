@@ -147,3 +147,7 @@ function price_formating ($val) {
     $val_format = (string) number_format(ceil($val), 0, ",", " ") . " " . "&#8381;"; 
     return $val_format;
 }
+
+function time_to_midnight () {
+    return date_interval_format(date_diff(date_create("now"), date_create("tomorrow midnight")), "%H:%i");
+}
