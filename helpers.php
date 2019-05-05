@@ -149,5 +149,6 @@ function price_formating ($val) {
 }
 
 function time_to_midnight () {
+    date_default_timezone_set('Europe/Samara');
     return date_interval_format(date_diff(date_create("now"), date_create("tomorrow midnight")), "%H:%i");
 }
