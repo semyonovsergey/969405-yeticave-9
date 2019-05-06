@@ -3,6 +3,8 @@
 require_once("helpers.php");
 require_once("data.php");
 
+date_default_timezone_set('Europe/Samara');
+
 $page_content = include_template("index.php", ["cat" => $cat, "ad" => $ad]);
 
 $layout_content = include_template("layout.php", [
