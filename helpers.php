@@ -149,8 +149,8 @@ function price_formating ($val) {
 }
 
 //Если до полуночи меньше 60 минут возвращается "timer--finishing"
-function add_class_timer_finishing() {
-    if (floor((strtotime("tomorrow midnight") - time()) / 60) <= 60) {
+function add_class_timer_finishing($end_time_lot) {
+    if (floor(($end_time_lot - time()) / 60) <= 60) {
         return "timer--finishing";
     }
     return "";
