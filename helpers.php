@@ -157,6 +157,6 @@ function add_class_timer_finishing($end_time_lot) {
 }
 
 //Форматирование оставшегося до полуночи времени в вид "ЧЧ:ММ"
-function time_to_midnight () {
-    return date_interval_format(date_diff(date_create("now"), date_create("tomorrow midnight")), "%H:%I");
+function time_to_end_lot ($end_time_lot) {
+    return date_interval_format(date_diff(date_create("now"), $end_time_lot), "%H:%I");
 }
