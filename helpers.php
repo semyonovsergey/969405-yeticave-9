@@ -149,6 +149,6 @@ function price_formating ($val) {
 }
 
 //Форматирование оставшегося до полуночи времени в вид "ЧЧ:ММ"
-function format_time ($end_time_lot) {
-    return date_interval_format(date_diff(date_create("now"), $end_time_lot), "%H:%I");
+function format_time ($end_time_lot = "tomorrow midnight") {
+    return date_interval_format(date_diff(date_create("now"), date_create($end_time_lot)), "%H:%I");
 }
