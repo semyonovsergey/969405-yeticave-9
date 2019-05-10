@@ -148,14 +148,6 @@ function price_formating ($val) {
     return $val_format;
 }
 
-//Если до полуночи меньше 60 минут возвращается "timer--finishing"
-function add_class_timer_finishing($end_time_lot) {
-    if (floor(($end_time_lot - time()) / 60) <= 60) {
-        return "timer--finishing";
-    }
-    return "";
-}
-
 //Форматирование оставшегося до полуночи времени в вид "ЧЧ:ММ"
 function format_time ($end_time_lot) {
     return date_interval_format(date_diff(date_create("now"), $end_time_lot), "%H:%I");

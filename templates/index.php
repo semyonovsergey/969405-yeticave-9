@@ -32,7 +32,7 @@
                             <span class="lot__amount">Стартовая цена</span>
                             <span class="lot__cost"><?=price_formating($value["price_begin"]);?></span>
                         </div>
-                        <div class="lot__timer timer <?=add_class_timer_finishing(strtotime("tomorrow midnight"));?>">
+                        <div class="lot__timer timer <?= (floor((strtotime("tomorrow midnight") - time()) / 60) <= 60) ? "timer--finishing" : ""; ?>">
                             <?=format_time(date_create("tomorrow midnight"));?>
                         </div>
                     </div>
