@@ -147,3 +147,8 @@ function price_formating ($val) {
     $val_format = (string) number_format(ceil($val), 0, ",", " ") . " " . "&#8381;"; 
     return $val_format;
 }
+
+//Форматирование оставшегося до полуночи времени в вид "ЧЧ:ММ"
+function format_time ($end_time_lot = "tomorrow midnight") {
+    return date_interval_format(date_diff(date_create("now"), date_create($end_time_lot)), "%H:%I");
+}
