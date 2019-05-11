@@ -20,8 +20,8 @@ price_begin    INT(6) NOT NULL,
 date_end	   DATETIME,
 price_step     INT(6) NOT NULL,
 author 	       INT(3) REFERENCES users(id),
-winner 	       CHAR(20) REFERENCES users(name),
-category       CHAR(50) REFERENCES categories(name),
+winner 	       CHAR(20) REFERENCES users(id),
+category       CHAR(50) REFERENCES categories(id),
 INDEX(name),
 INDEX(description)
 );
@@ -42,5 +42,4 @@ name 			CHAR(20) NOT NULL UNIQUE,
 password 		CHAR(64) NOT NULL,
 avatar 			CHAR(255),
 communication	CHAR(30) NOT NULL,
-rate 			INT(3) REFERENCES rates(id)
 );
