@@ -19,19 +19,19 @@ image		   CHAR(255) NOT NULL,
 price_begin    INT(6) NOT NULL,
 date_end	   DATETIME,
 price_step     INT(6) NOT NULL,
-author 	       INT(3) REFERENCES users(id),
-winner 	       CHAR(20) REFERENCES users(name),
-category       CHAR(50) REFERENCES categories(name),
+author 	       INT(10) REFERENCES users(id),
+winner 	       INT(10) REFERENCES users(id),
+category       INT(2) REFERENCES categories(id),
 INDEX(name),
 INDEX(description)
 );
 
-CREATE TABLE rates (
+CREATE TABLE bets (
 id      	INT(10) AUTO_INCREMENT PRIMARY KEY,
-date_rate   DATETIME,
-price_rate	INT(6),
-user 		INT(3) REFERENCES users(id),
-lot 		INT(3) REFERENCES lots(id)
+date_bet   DATETIME,
+price_bet	INT(6),
+user 		INT(10) REFERENCES users(id),
+lot 		INT(10) REFERENCES lots(id)
 );
 
 CREATE TABLE users (
@@ -41,6 +41,5 @@ email 			CHAR(30) NOT NULL UNIQUE,
 name 			CHAR(20) NOT NULL UNIQUE,
 password 		CHAR(64) NOT NULL,
 avatar 			CHAR(255),
-communication	CHAR(30) NOT NULL,
-rate 			INT(3) REFERENCES rates(id)
+communication	CHAR(30) NOT NULL
 );
