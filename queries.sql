@@ -26,7 +26,7 @@ INSERT INTO lots VALUES
 	(NULL, "2019-05-11 10:01:00", "Маска Oakley Canopy", "Маска Oakley Canopy",
 		"img/lot-6.jpg", 5400, "2019-05-19 00:00:00", 100, 1, 4, 6);
 
-INSERT INTO bet VALUES
+INSERT INTO bets VALUES
 	(NULL, "2019-05-11 11:00:00", 11099, 1, 1),
 	(NULL, "2019-05-11 11:05:00", 8100, 1, 3),
 	(NULL, "2019-05-11 11:10:00", 8200, 1, 3),
