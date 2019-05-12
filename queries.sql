@@ -37,6 +37,8 @@ SELECT name FROM categories;
 
 /* Получение самых новых, открытых лотов:
 каждый лот содержит название, стартовую цену, ссылку на изображение, цену, название категории */
-SELECT name, price_begin, image, price_step, category FROM lots WHERE date_end >= NOW();
+SELECT name, price_begin, image, price_rate, category FROM bets
+RIGHT JOIN lots ON lot = lots.id
+WHERE date_end >= NOW();
 
 /* Показ лота по его id. Получите также название категории, к которой принадлежит лот */
