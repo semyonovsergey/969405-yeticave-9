@@ -19,9 +19,9 @@ image		   CHAR(255) NOT NULL,
 price_begin    INT(6) NOT NULL,
 date_end	   DATETIME,
 price_step     INT(6) NOT NULL,
-author 	       INT(3) REFERENCES users(id),
-winner 	       INT(3) REFERENCES users(id),
-category       INT(3) REFERENCES categories(id),
+author 	       INT(10) REFERENCES users(id),
+winner 	       INT(10) REFERENCES users(id),
+category       INT(2) REFERENCES categories(id),
 INDEX(name),
 INDEX(description)
 );
