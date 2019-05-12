@@ -48,3 +48,7 @@ LEFT JOIN categories c ON category = c.id;
 /* Обновление названия лота по его идентификатору */
 UPDATE lots SET name = "2019 Rossignol District Snowboard"
 WHERE id = 1;
+
+/* Получение списка самых свежих ставок для лота по его идентификатору */
+SELECT id FROM bets
+WHERE lot = 3, date_bet > "2019-01-01 00:00:00";
