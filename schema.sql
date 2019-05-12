@@ -30,8 +30,8 @@ CREATE TABLE bets (
 id      	INT(10) AUTO_INCREMENT PRIMARY KEY,
 date_bet   DATETIME,
 price_bet	INT(6),
-user 		INT(3) REFERENCES users(id),
-lot 		INT(3) REFERENCES lots(id)
+user 		INT(10) REFERENCES users(id),
+lot 		INT(10) REFERENCES lots(id)
 );
 
 CREATE TABLE users (
