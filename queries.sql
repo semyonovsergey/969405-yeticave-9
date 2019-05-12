@@ -1,3 +1,5 @@
+USE yeticave;
+
 INSERT INTO categories VALUES 
 	(NULL, "Доски и лыжи", "boards"),
 	(NULL, "Крепления", "attachment"),
