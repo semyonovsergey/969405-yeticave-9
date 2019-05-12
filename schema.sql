@@ -41,5 +41,5 @@ email 			CHAR(30) NOT NULL UNIQUE,
 name 			CHAR(20) NOT NULL UNIQUE,
 password 		CHAR(64) NOT NULL,
 avatar 			CHAR(255),
-communication	CHAR(30) NOT NULL,
+communication	CHAR(30) NOT NULL
 );
