@@ -46,3 +46,5 @@ SELECT l.id, c.name FROM lots l
 LEFT JOIN categories c ON category = c.id;
 
 /* Обновление названия лота по его идентификатору */
+UPDATE lots SET name = "2019 Rossignol District Snowboard"
+WHERE id = 1;
