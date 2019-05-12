@@ -42,3 +42,7 @@ RIGHT JOIN lots ON lot = lots.id
 WHERE date_end >= NOW();
 
 /* Показ лота по его id. Получите также название категории, к которой принадлежит лот */
+SELECT l.id, c.name FROM lots l
+LEFT JOIN categories c ON category = c.id;
+
+/* Обновление названия лота по его идентификатору */
