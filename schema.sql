@@ -26,7 +26,7 @@ INDEX(name),
 INDEX(description)
 );
 
-CREATE TABLE rates (
+CREATE TABLE bet (
 id      	INT(10) AUTO_INCREMENT PRIMARY KEY,
 date_rate   DATETIME,
 price_rate	INT(6),
