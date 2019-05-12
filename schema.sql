@@ -20,8 +20,8 @@ price_begin    INT(6) NOT NULL,
 date_end	   DATETIME,
 price_step     INT(6) NOT NULL,
 author 	       INT(3) REFERENCES users(id),
-winner 	       CHAR(20) REFERENCES users(id),
-category       CHAR(50) REFERENCES categories(id),
+winner 	       INT(3) REFERENCES users(id),
+category       INT(3) REFERENCES categories(id),
 INDEX(name),
 INDEX(description)
 );
