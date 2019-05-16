@@ -6,6 +6,7 @@ $is_auth = rand(0, 1);
 $user_name = 'Semyonov Sergey'; // укажите здесь ваше имя
 $page_name = "Главная";
 //$cat = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
+/*
 $ad = [
     [
         "title" => "2014 Rossignol District Snowboard",
@@ -43,6 +44,6 @@ $ad = [
         "price_begin" => 5400,
         "pic" => "img/lot-6.jpg"
     ],
-];
+]; */
 
 ?>

@@ -35,7 +35,7 @@ INSERT INTO bets VALUES
 	(NULL, "2019-05-11 11:00:00", 5500, 1, 6);
 
 /* Получение всех категорий */
-SELECT name FROM categories;
+SELECT name_cat FROM categories;
 
 /* Получение самых новых, открытых лотов:
 каждый лот содержит название, стартовую цену, ссылку на изображение, цену, название категории */
@@ -44,7 +44,7 @@ RIGHT JOIN lots ON lot = lots.id
 WHERE date_end >= NOW();
 
 /* Показ лота по его id. Получите также название категории, к которой принадлежит лот */
-SELECT l.id, c.name FROM lots l
+SELECT l.id, c.name_cat FROM lots l
 LEFT JOIN categories c ON category = c.id;
 
 /* Обновление названия лота по его идентификатору */

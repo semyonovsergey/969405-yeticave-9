@@ -12,13 +12,17 @@ else {
 }
 mysqli_set_charset($con, "utf8");
 
-$sql = "SELECT name FROM categories";
+$sql1 = "SELECT name, name_cat, price_begin, image FROM lots LEFT JOIN categories c ON category = c.id";
+$result1 = mysqli_query($con, $sql1);
+$ad = mysqli_fetch_all($result1, MYSQLI_ASSOC);
+
+$sql = "SELECT name_cat FROM categories";
 $result = mysqli_query($con, $sql);
 while ($cats = mysqli_fetch_assoc($result)) {
-    $cat[] = $cats["name"];
+    $cat[] = $cats["name_cat"];
 }
 
-//var_dump($cat);
+//var_dump($ad);
 
 $page_content = include_template("index.php", ["cat" => $cat, "ad" => $ad]);
 
