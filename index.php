@@ -11,16 +11,14 @@ if ($con) {
     $result = mysqli_query($con, $sql);
     $ad = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    $sql = "SELECT name_cat FROM categories";
+    $sql = "SELECT name_cat, code FROM categories";
     $result = mysqli_query($con, $sql);
-    while ($cats = mysqli_fetch_assoc($result)) {
-        $cat[] = $cats["name_cat"];
-    }
+    $cat = mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 else {
     print("Ошибка подключения: " . mysqli_connect_error());
 }
-//var_dump($ad);
+//var_dump($cat);
 
 $page_content = include_template("index.php", ["cat" => $cat, "ad" => $ad]);
 
