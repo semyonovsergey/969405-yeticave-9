@@ -5,9 +5,9 @@ DEFAULT COLLATE utf8_general_ci;
 USE yeticave;
 
 CREATE TABLE categories (
-id      INT(2) AUTO_INCREMENT PRIMARY KEY,
-name    CHAR(50) NOT NULL UNIQUE,
-code    CHAR(10) NOT NULL UNIQUE
+id      	INT(2) AUTO_INCREMENT PRIMARY KEY,
+name_cat	CHAR(50) NOT NULL UNIQUE,
+code    	CHAR(10) NOT NULL UNIQUE
 );
 
 CREATE TABLE lots (
@@ -28,7 +28,7 @@ INDEX(description)
 
 CREATE TABLE bets (
 id      	INT(10) AUTO_INCREMENT PRIMARY KEY,
-date_bet   DATETIME,
+date_bet   	DATETIME,
 price_bet	INT(6),
 user 		INT(10) REFERENCES users(id),
 lot 		INT(10) REFERENCES lots(id)

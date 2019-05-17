@@ -5,7 +5,26 @@ date_default_timezone_set('Europe/Moscow');
 $is_auth = rand(0, 1);
 $user_name = 'Semyonov Sergey'; // укажите здесь ваше имя
 $page_name = "Главная";
-$cat = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
+
+$con = mysqli_connect("localhost", "root", "", "yeticave");
+mysqli_set_charset($con, "utf8");
+
+if ($con) {
+    $sql = "SELECT name, name_cat, price_begin, image FROM lots LEFT JOIN categories c ON category = c.id";
+    $result = mysqli_query($con, $sql);
+    $ad = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    $sql = "SELECT name_cat, code FROM categories";
+    $result = mysqli_query($con, $sql);
+    $cat = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+else {
+    print("Ошибка подключения: " . mysqli_connect_error());
+}
+//var_dump($cat);
+
+//$cat = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
+/*
 $ad = [
     [
         "title" => "2014 Rossignol District Snowboard",
@@ -43,6 +62,6 @@ $ad = [
         "price_begin" => 5400,
         "pic" => "img/lot-6.jpg"
     ],
-];
+]; */
 
 ?>
